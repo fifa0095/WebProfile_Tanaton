@@ -7,7 +7,7 @@ const Home = () => {
 
 
   return (
-    <div className='overflow-hidden h-[1000vh]'>
+    <div className='overflow-hidden '>
       <Main/>
     </div>
   );

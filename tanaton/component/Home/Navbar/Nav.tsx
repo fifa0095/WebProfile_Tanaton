@@ -34,7 +34,7 @@ const Nav = ({openNav}:Props) => {
                 <div className='w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center flex-col'>
                     <GrTechnology className='w-6 h-6 text-white'/>
                 </div>
-                <h1 className='text-xl hidden sm:block md:text-2xl text-purple-700 font-bold'> TechDev</h1>
+                <h1 className='text-xl hidden sm:block md:text-2xl text-yellow-500 font-bold'>Tanaton Phukanngam</h1>
             </div>
 
             {/* Navlink */}
@@ -59,8 +59,8 @@ const Nav = ({openNav}:Props) => {
 
                   <span className={`absolute flex items-center justify-center w-full h-full
                   ${navbg? "text-purple-400" : "text-yellow-400 shadow-md"}transition-all duration-300 transform group-hover:translate-x-full ease`}>
-                    Create Account</span>
-                  <span className="relative invisible">Create Account</span>
+                    Hire Me </span>
+                  <span className="relative invisible">Hire Me </span>
               </a>
 {/* -------------------------------------------------- */}
               {/* Burger Manu */}
