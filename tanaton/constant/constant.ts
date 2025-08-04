@@ -2,19 +2,19 @@ export const navLink = [
 
     {
         id:1,
-        url:'#',
+        url:'/',
         label:"Home"
 
     },
     {
         id:2,
-        url:'#',
+        url:'/Services',
         label:"Feature"
 
     },
     {
         id:3,
-        url:'#',
+        url:'/Services',
         label:"Services"
 
     },
