@@ -41,7 +41,7 @@ const Nav = ({openNav}:Props) => {
             <div className='hidden lg:flex items-center space-x-10'>
               {navLink.map((link) => {
                 return(
-                  <Link href={link.url} key={link.id} className={`${navbg? "text-purple-500" : "text-yellow-400 shadow-md"} hover:text-yellow-600 transition-all duration-200 text-lg font-semibold`}> 
+                  <Link href={link.url} key={link.id} className={`${navbg? "text-purple-500" : "text-yellow-400 "} hover:text-yellow-600 transition-all duration-200 text-lg font-semibold`}> 
                     <p >{link.label}</p>
                   </Link>
                 )

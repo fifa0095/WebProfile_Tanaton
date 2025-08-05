@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Rethink_Sans } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/component/Home/Navbar/ResponsiveNav";
-
+import PageTransition from "@/component/PageTransition";
 
 const font = Rethink_Sans ({
   weight : ["400","500","600","700","800"],
@@ -12,7 +12,6 @@ const font = Rethink_Sans ({
 export const metadata: Metadata = {
   title: "Tanaton Phukanngam",
   description: "Web application Profile for Tanaton Phukanngam",
-
 };
 
 export default function RootLayout({
@@ -22,11 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${font.className} antialiased`}
-      >
+      <body className={`${font.className} antialiased `}>
         <ResponsiveNav/>
-        {children}
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );

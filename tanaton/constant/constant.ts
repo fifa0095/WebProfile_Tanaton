@@ -9,13 +9,13 @@ export const navLink = [
     {
         id:2,
         url:'/Services',
-        label:"Feature"
+        label:"Services"
 
     },
     {
         id:3,
-        url:'/Services',
-        label:"Services"
+        url:'/Resume',
+        label:"Resume"
 
     },
     {
