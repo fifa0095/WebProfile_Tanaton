@@ -143,7 +143,7 @@ const education = [
                     },
                     {
                         id: 4,
-                        year: "2022 - Present",
+                        year: "2022 - 2025",
                         title: "INENG Lab Staff at KMUTT",
                         role: "Team Member",
                         details: "Staff of the Robotics Lab of the Computer Engineering. Has experience in teaching and holding camps about robots many times. Have an understanding of the basics of robots and basic sensors."
@@ -164,14 +164,14 @@ const education = [
                     },
                     {
                         id: 7,
-                        year: "2022 - Present",
+                        year: "2023 - 2024",
                         title: "Computer Programming Teaching Assistant at KMUTT",
                         role: "Part Time",
                         details: "The Teaching Assistant (C language) will collaborate with faculty to support computer programming courses and offer guidance to students."
                     },
                     {
                         id: 8,
-                        year: "2022 - Present",
+                        year: "2023",
                         title: "Hardware House Admin Support at KMUTT",
                         role: "Part Time",
                         details: "The Hardware Admin Support organizes and assists with the deployment of hardware equipment while providing essential administrative support to the class."
@@ -240,16 +240,16 @@ const Resume = () => {
   const [activeTab, setActiveTab] = useState("exp");
 
   return (
-    <div className="relative min-h-screen">
+    <section className="relative min-h-screen ">
       {/* Sticky Background */}
       <div className="fixed inset-0 w-full h-full z-0">
         <div className="absolute inset-0 bg-[url('/images/bg3.jpg')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
             {/* Foreground Content */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-center p-4 md:p-8 space-y-2 md:space-y-0 md:space-x-6">
+      <div className=" relative z-10 flex flex-col md:flex-row justify-center p-4 md:p-8 space-y-2 md:space-y-0 md:space-x-6">
         {/* Left Side: Why hire me? + Vertical Tabs */}
-        <div className="md:w-1/2 mt-[10vh] w-full flex flex-col items-start p-8  rounded-t-lg md:rounded-l-lg md:rounded-tr-none mb-4 md:mb-0 max-h-[80vh] overflow-y-auto">
+        <div className="md:w-1/3 mt-[10vh] w-full flex flex-col items-start p-8  rounded-t-lg md:rounded-l-lg md:rounded-tr-none mb-4 md:mb-0 max-h-[80vh] overflow-y-auto">
           <h2 className="text-3xl font-bold text-yellow-400 mb-4">Why Hire Me?</h2>
           <p className="text-gray-200 mb-4">
             I am a passionate and versatile web developer with a strong foundation in both front-end and back-end technologies. My experience in real-world projects, teamwork, and problem-solving makes me a valuable asset for any organization looking to build impactful digital solutions. I am committed to continuous learning and delivering high-quality, scalable code.
@@ -260,12 +260,12 @@ const Resume = () => {
             <li>Quick learner, adaptable, and detail-oriented</li>
           </ul>
           {/* Tabs */}
-          <div className="flex  md:flex-col flex-row gap-2 w-full justify-center items-center  mb-4">
+          <div className="flex  md:flex-col flex-row  gap-2 w-full justify-center items-center  mb-4">
             {TABS.map(tab => (
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-left w-[30vw] justify-center flex items-center
+                className={`px-4 py-2 rounded-lg font-semibold cursor-pointer transition-colors duration-200 text-left w-[30vw] justify-center flex items-center
                   ${activeTab === tab.key ? "bg-yellow-400 text-black" : "bg-gray-800 text-gray-200 hover:bg-yellow-600 hover:text-white"}`}
               >
                 {tab.label}
@@ -274,7 +274,7 @@ const Resume = () => {
           </div>
         </div>
         {/* Right Side: Tab Content */}
-        <div className="md:w-1/2 mt-[10vh] w-full bg-black/70 rounded-b-lg md:rounded-r-lg md:rounded-bl-none p-8 flex flex-col max-h-[80vh] overflow-y-auto">
+        <div className="md:w-2/3 mt-[10vh] w-full bg-black/70 rounded-lg md:rounded-r-lg p-10 flex flex-col max-h-[80vh] overflow-y-auto">
         <div className="flex-1 min-h-[60vh]">
             <AnimatePresence mode="wait">
             <motion.div
@@ -291,50 +291,53 @@ const Resume = () => {
                     <p className="text-gray-200 mb-4">{skills[0].description}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {experience[0].exp.map(exp => (
-                        <div key={exp.id} className="bg-gray-800 rounded-lg p-4 flex flex-col h-full">
+                        <div key={exp.id} className="border border-2 border-purple-500 rounded-lg p-4 flex flex-col h-full">
                         <div className="font-semibold text-white mb-1">{exp.position}{exp.company && <> @ {exp.company}</>}</div>
-                        <div className="text-gray-400 text-sm mb-2">{exp.year}</div>
+                        <div className="text-yellow-300 text-sm mb-2">{exp.year}</div>
                         <div className="text-gray-200 text-sm whitespace-pre-line">{exp.details}</div>
                         </div>
                     ))}
                     </div>
                 </>
                 )}
-                {activeTab === "edu" && (
-                <>
-                    <h3 className="text-xl font-bold text-yellow-300 mb-2">{education[0].title}</h3>
-                    <p className="text-gray-200 mb-2">{education[0].description}</p>
-                    <div className="font-semibold text-white">{education[0].degree}</div>
-                    <div className="text-gray-400 text-sm">{education[0].univercity}</div>
-                    <div className="text-gray-200">GPAX: {education[0].gpax}</div>
-                    <h4 className="text-lg font-bold text-yellow-200 mt-4 mb-2">Extra-Curricular Activities</h4>
-                    <ul className="space-y-2">
-                    {education[0].activity.map(act => (
-                        <li key={act.id} className="border-b border-gray-700 pb-2">
-                        <div className="flex flex-col md:flex-row md:justify-between">
-                            <span className="font-semibold text-white">{act.title}</span>
-                            <span className="text-sm text-gray-400">{act.year} &middot; {act.role}</span>
+                    {activeTab === "edu" && (
+                    <>
+                        <h3 className="text-xl font-bold text-yellow-300 mb-2">{education[0].title}</h3>
+                        <p className="text-gray-200 mb-2">{education[0].description}</p>
+                        <div className="font-semibold text-yellow-300">{education[0].degree}</div>
+                        <div className="text-gray-400 text-sm">{education[0].univercity}</div>
+                        <div className="text-gray-200">GPAX: {education[0].gpax}</div>
+                        <h4 className="text-lg font-bold text-yellow-200 mt-4 mb-2">Extra-Curricular Activities</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {education[0].activity.map(act => (
+                            <div key={act.id} className="hover:border-black hover:bg-white/10 rounded-lg p-4 flex flex-col h-full border border-purple-500">
+                            <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                                <span className="font-semibold text-white">{act.title}</span>
+                                <span className="text-sm text-yellow-400">{act.year} &middot; {act.role}</span>
+                            </div>
+                            <div className="text-gray-300 text-sm mt-1">{act.details}</div>
+                            </div>
+                        ))}
                         </div>
-                        <div className="text-gray-300 text-sm mt-1">{act.details}</div>
-                        </li>
-                    ))}
-                    </ul>
-                </>
-                )}
-                {activeTab === "skill" && (
-                <>
-                    <h3 className="text-xl font-bold text-yellow-300 mb-2">{skills[0].title}</h3>
-                    <p className="text-gray-200 mb-4">{skills[0].description}</p>
-                    <div className="flex flex-wrap gap-4">
-                    {skills[0].skillSet.map(skill => (
-                        <div key={skill.id} className="flex items-center gap-2 bg-gray-800 px-3 py-2 rounded">
-                        {skill.icon}
-                        <span className="text-white">{skill.name}</span>
+                    </>
+                    )}
+                    {activeTab === "skill" && (
+                    <>
+                        <h3 className="text-xl font-bold text-yellow-300 mb-2 w-full">{skills[0].title}</h3>
+                        <p className="text-gray-200 mb-4 w-full">{skills[0].description}</p>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full">
+                        {skills[0].skillSet.map(skill => (
+                            <div
+                            key={skill.id}
+                            className="flex flex-col items-center justify-center bg-gray-800 px-3 py-6 rounded-lg w-full min-h-[110px] transition-all duration-200 hover:bg-yellow-400 hover:text-black"
+                            >
+                            <div className="mb-2">{React.cloneElement(skill.icon, { className: 'w-12 h-12 ' + (skill.icon.props.className || '') })}</div>
+                            <span className="text-white font-semibold text-base text-center">{skill.name}</span>
+                            </div>
+                        ))}
                         </div>
-                    ))}
-                    </div>
-                </>
-                )}
+                    </>
+                    )}
                 {activeTab === "about" && (
                 <>
                     <h3 className="text-xl font-bold text-yellow-300 mb-2">{aboutMe.title}</h3>
@@ -342,7 +345,7 @@ const Resume = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {aboutMe.info.map((item, idx) => (
                         <div key={idx} className="text-gray-100">
-                        <span className="font-semibold">{item.fieldName}:</span> {item.fieldValue}
+                        <span className="font-semibold text-yellow-300">{item.fieldName}:</span> {item.fieldValue}
                         </div>
                     ))}
                     </div>
@@ -362,7 +365,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 export default Resume
