@@ -13,7 +13,7 @@ const aboutMe =
     info: [
         { fieldName: "Name", fieldValue: "Tanaton Phukanngam" },
         { fieldName: "Email", fieldValue: "tanaton.phukanngam@gmail.com" },
-        { fieldName: "Phone", fieldValue: "+66 1234 5678" },
+        { fieldName: "Phone", fieldValue: "0930702155" },
         { fieldName: "Location", fieldValue: "Bangkok, Thailand" },
         { fieldName: "Experience", fieldValue: "2+ years in web development" },
         { fieldName: "Education", fieldValue: "Bachelor's in Computer Engineering" },
